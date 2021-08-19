@@ -15,7 +15,7 @@ call plug#end()
 
 " map leader to Space
 let mapleader=" " " have to mapleader before sourcing the plugin config
-" Source the nvim confi
+" Source the nvim plugin conf
 source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/telescope.vim
 
@@ -26,9 +26,12 @@ set scrolloff=5 " keep 5 lines when scrolling
 set nohlsearch " setting search texts to not be highlighted
 set tabstop=4 shiftwidth=4 expandtab
 set number relativenumber
+let g:lightline = { 'colorscheme': 'onedark', }
+let g:onedark_color_overrides = {
+\ "black": {"gui": "#262A32", "cterm": "234", "cterm16": "0" },
+\}
 " set guifont=Fira\ Code\ Regularh13 
 let g:onedark_terminal_italics = 1 
-let g:lightling = { 'colorscheme': 'onedark', }
 colorscheme onedark
 set clipboard=unnamedplus
 set cursorline
