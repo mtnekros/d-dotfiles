@@ -1,4 +1,7 @@
 # ' change directory
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias v='cd ~/Videos'
 alias vm='cd ~/Videos/my_videos/'
 alias dt='cd ~/Desktop'
