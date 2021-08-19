@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+for file in ~/.dotfiles/.{bashrc,bash_aliases,bash_prompt,bash_profile}; do
+    ln -s $file ~/
+done;
+
+[ -d ~/.config/nvim ] || mkdir -p ~/.config
+ln -s ~/.dotfiles/nvim ~/.config/
