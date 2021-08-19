@@ -1,0 +1,6 @@
+{
+    "python.linting.enabled": true,
+    "python.jediEnabled": false,
+    // "diagnostic.checkCurrentLine": true,
+    "python.linting.pylintEnabled": true
+}
