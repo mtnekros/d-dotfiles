@@ -1,7 +1,8 @@
 #!/usr/bin/bash
 
-for file in ~/.dotfiles/.{bashrc,functions,bash_aliases,bash_prompt,bash_profile}; do
-    ln -s $file ~/
+for f in .{bashrc,functions,bash_aliases,bash_prompt,bash_profile}; do
+    [ -h ~/f ] && rm ~/$f
+    ln -s ~/.dotfiles/$f ~/
 done;
 
 [ -d ~/.config/nvim ] || mkdir -p ~/.config
