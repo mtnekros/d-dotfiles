@@ -11,12 +11,15 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " for fuzzy find telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+" for git gutter
+Plug 'lewis6991/gitsigns.nvim'
 call plug#end()
 
 " map leader to Space
 let mapleader=" " " have to mapleader before sourcing the plugin config
 " Source the nvim plugin conf
 source $HOME/.config/nvim/plug-config/coc.vim
+source /home/diwas/.config/nvim/plug-config/gitsigns.vim
 source $HOME/.config/nvim/plug-config/telescope.vim
 
 " settings start here
@@ -26,12 +29,9 @@ set scrolloff=5 " keep 5 lines when scrolling
 set nohlsearch " setting search texts to not be highlighted
 set tabstop=4 shiftwidth=4 expandtab
 set number relativenumber
-let g:lightline = { 'colorscheme': 'onedark', }
-let g:onedark_color_overrides = {
-\ "black": {"gui": "#262A32", "cterm": "234", "cterm16": "0" },
-\}
+set numberwidth=1 " set numberwith/gutter to be as small as possible
+set signcolumn=auto " automatically adjust the gutter width to accomodate line number and signs
 " set guifont=Fira\ Code\ Regularh13 
-let g:onedark_terminal_italics = 1 
 colorscheme onedark
 set clipboard=unnamedplus
 set cursorline
