@@ -126,6 +126,7 @@ shopt -s histappend
 # Set history size
 export HISTSIZE=100000
 export HISTFILESIZE=300000
+export HISTCONTROL=ignorespace
 #
 # # ex - archive extractor
 # # usage: ex <file>
@@ -151,7 +152,6 @@ ex ()
   fi
 }
 
-export HISTCONTROL=ignorespace
 
 # TILIX 
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
