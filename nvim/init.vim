@@ -18,9 +18,9 @@ call plug#end()
 " map leader to Space
 let mapleader=" " " have to mapleader before sourcing the plugin config
 " Source the nvim plugin conf
-source ~/.config/nvim/plug-config/coc.vim
-source ~/.config/nvim/plug-config/gitsigns.vim
-source ~/.config/nvim/plug-config/telescope.vim
+source $HOME/.config/nvim/plug-config/coc.vim
+source $HOME/.config/nvim/plug-config/gitsigns.vim
+source $HOME/.config/nvim/plug-config/telescope.vim
 
 " settings start here
 syntax enable
@@ -30,7 +30,7 @@ set nohlsearch " setting search texts to not be highlighted
 set tabstop=4 shiftwidth=4 expandtab
 set number relativenumber
 set numberwidth=1 " set numberwith/gutter to be as small as possible
-set signcolumn=auto " automatically adjust the gutter width to accomodate line number and signs
+set signcolumn=yes:1 " keep 1 column with for extra signs in gutter (eg:gitkeeps sign or lint errors)
 " set guifont=Fira\ Code\ Regularh13 
 " set the colorscheme
 colorscheme onedark
