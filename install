@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-for file in ~/.dotfiles/.{bashrc,bash_aliases,bash_prompt,bash_profile}; do
+for file in ~/.dotfiles/.{bashrc,functions,bash_aliases,bash_prompt,bash_profile}; do
     ln -s $file ~/
 done;
 

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+blog() {
+    # function opens up a md file with # heading passed as parameter
+    # also generates a name for the file
+    if [ -z "$*" ]; then
+        echo "No title provided";
+        return;
+    fi
+    filename="`date +'%d-%m-%Y'`_`echo "$@" | tr " " _ | tr [:upper:] [:lower:]`.md"
+    echo "# $@" >> $filename
+    nvim "$filename"
+}
+
+export -f blog
