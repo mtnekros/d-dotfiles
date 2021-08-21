@@ -19,7 +19,8 @@ autocmd FileType vue setlocal ts=3 sts=3 sw=3
 autocmd FileType sql setlocal ts=2 sts=2 sw=2
 set noshowmode " hide mode sinces powerline plugin already shows it
 set guicursor=i:block " make cursor fat in insert mode like in vim
-
+set cc=81  " highlight column after 'textwidth'
+hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 augroup numbertoggle " toggle relativenumber on/off between insert and other modes
     autocmd!
     autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
@@ -66,21 +67,17 @@ nnoremap <silent> <leader>p :cprev<CR>
 
 """ Plugins
 call plug#begin('~/.config/nvim/plugged')
-" Better Syntax Support
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'joshdick/onedark.vim'
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-" for intellisense
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" for fuzzy finding telescope
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-" for git gutter
-Plug 'lewis6991/gitsigns.nvim'
-" for icons in powerline & nerdtree
-Plug 'ryanoasis/vim-devicons'  " also have to install nerd font in your system for this to work
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " File Manager
+Plug 'joshdick/onedark.vim' " onedark theme
+Plug 'sheerun/vim-polyglot' " better syntax support
+Plug 'tpope/vim-surround' " yst<head> cs{'
+Plug 'tpope/vim-commentary' " for comment with gc + motion action
+Plug 'vim-airline/vim-airline' " nicer status line
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " for intellisense
+Plug 'nvim-lua/plenary.nvim' " dependency for telescope & gitsigns
+Plug 'nvim-telescope/telescope.nvim' " for fuzzy finding telescope
+Plug 'lewis6991/gitsigns.nvim' " for basic git signs & functionalities
+Plug 'ryanoasis/vim-devicons'  " for icons in powerline & nerdtree: also have to install nerd font in your system for this to work 
 call plug#end()
 
 source $HOME/.config/nvim/plug-config/gitsigns.vim
