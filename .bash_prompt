@@ -52,7 +52,7 @@ prompt_git() {
 
 	[ -n "${s}" ] && s=" [${s}]";
 
-	echo -e "${1}${branchName}${2}${s}";
+	echo -e "${1}${branchName} ${2}${s}";
 }
 
 if tput setaf 1 &> /dev/null; then

@@ -3,7 +3,7 @@
 let mapleader=" " " map leader to Space
 syntax enable " enable syntax highlighting
 set ignorecase " ignore case when searching
-set scrolloff=5 " keep 7 lines when scrolling
+set scrolloff=1 " keep 1 lines when scrolling
 set sidescrolloff=5 " keep 7 lines when scrolling sideways
 set nohlsearch " setting search texts to not be highlighted
 set tabstop=4 shiftwidth=4 expandtab
