@@ -38,6 +38,7 @@ alias prs="python manage.py runserver"
 # general
 alias xo='xdg-open'
 alias music='ncmpcpp'
+alias weather='curl wttr.in'
 
 #common files
 alias vwl='vim ~/Desktop/.worklog.md'

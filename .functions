@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-blog() {
+start_blog() {
     # function opens up a md file with # heading passed as parameter
     # also generates a name for the file
     if [ -z "$*" ]; then
@@ -12,4 +12,4 @@ blog() {
     nvim "$filename"
 }
 
-export -f blog
+export -f start_blog
