@@ -20,6 +20,8 @@ autocmd FileType sql setlocal ts=2 sts=2 sw=2
 set noshowmode " hide mode sinces powerline plugin already shows it
 set guicursor=i:block " make cursor fat in insert mode like in vim
 set cc=81  " highlight column after 'textwidth'
+set splitright " open on right side when doing vsplit
+
 hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 augroup numbertoggle " toggle relativenumber on/off between insert and other modes
     autocmd!
