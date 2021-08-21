@@ -1,0 +1,10 @@
+#!/usr/bin/sh
+
+find /usr/share/icons/gnome/32x32 -type f \
+    | rev \
+    | cut -d "." -f 2 \
+    | cut -d "/" -f 1 \
+    | rev \
+    | dmenu -i -l 25 -fn 'monospace-16' \
+    | tr -d '\n' | xclip -selection clipboard
+[ -n "$(xclip -o -selection clipboard)" ] && notify-send "$(xclip -o -selection clipboard) copied to clipboard"

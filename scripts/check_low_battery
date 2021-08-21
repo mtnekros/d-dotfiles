@@ -1,0 +1,29 @@
+#!/usr/bin/sh
+
+BTRY=$(acpi | awk '{print $4 }' | sed 's/[^0-9]//g') # get battery percentage
+RUNTIME_DIR=/run/user/$(id -u) # get runtime directory for current user
+
+function send_notification()
+{
+    xdg_runtime_dir=$RUNTIME_DIR /usr/bin/notify-send -i battery-caution -u critical "$1" "$2"
+}
+
+function handle_low_btry()
+{
+    # if battery is charging don't do anything
+    if [[ "$(acpi)" = *"Charging"* ]]; then
+        return 
+    fi
+
+    if (( $BTRY < 9 )); then
+        send_notification "😨😨😨 Very Low battery ($BTRY%) 😨😨😨" \
+            "The laptop will shutdown within 1 minute\neven if you plugin the charger.\nSave everything you have to save."
+        sudo shutdown +1 "Shutting down because of low battery $BTRY%"
+    elif (( $BTRY < 12 )); then
+        send_notification "low battery ($BTRY%) 😨😨😨" "The laptop may shutdown any minute now."
+    elif (($BTRY < 21)); then
+        send_notification "low battery 😬😬😬" "battery is at $BTRY% please recharge on time"
+    fi
+}
+
+handle_low_btry

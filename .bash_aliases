@@ -12,7 +12,7 @@ alias dma='cd ~/Documents/articles'
 alias dw='cd ~/drawings/'
 alias dwr='cd ~/drawings/references/'
 alias dwm='cd ~/drawings/my_drawings/'
-alias s='cd ~/.scripts'
+alias s='cd ~/.dotfiles/scripts'
 # project 
 alias p='cd ~/projects'
 alias pp='cd ~/projects/personal/'

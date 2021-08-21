@@ -20,7 +20,7 @@ autocmd FileType sql setlocal ts=2 sts=2 sw=2
 set noshowmode " hide mode sinces powerline plugin already shows it
 set guicursor=i:block " make cursor fat in insert mode like in vim
 
-augroup numbertoggle " set relativenumber off in insert mode
+augroup numbertoggle " toggle relativenumber on/off between insert and other modes
     autocmd!
     autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
     autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber

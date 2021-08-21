@@ -1,0 +1,4 @@
+#!/bin/sh
+
+grep -h -v "#" ~/.dotfiles/scripts/emojis ~/.dotfiles/scripts/kaomojis ~/.dotfiles/scripts/nerdfonts | dmenu -i -l 20 -fn 'Noto Color Emoji-19' | awk -F ':' '{print $1}' | tr -d '\n' | xclip -selection clipboard
+[ -n "$(xclip -o -selection clipboard)" ] && notify-send "$(xclip -o -selection clipboard) copied to clipboard"
