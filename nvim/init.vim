@@ -35,9 +35,6 @@ if (empty($TMUX))
   endif
 endif
 
-" NERDTree Settings
-nmap <C-f> :NERDTreeToggle<CR>
-
 " window navigation mappings
 " probably terminal mode
 tnoremap <A-h> <C-\><C-n><C-w>h
@@ -91,3 +88,5 @@ source $HOME/.config/nvim/plug-config/telescope.vim
 source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/onedark.vim
 source $HOME/.config/nvim/plug-config/airline.vim
+source $HOME/.config/nvim/plug-config/nerdtree.vim
+
