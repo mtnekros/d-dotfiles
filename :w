@@ -76,7 +76,6 @@ Plug 'tpope/vim-surround' " yst<head> cs{'
 Plug 'tpope/vim-commentary' " for comment with gc + motion action
 Plug 'vim-airline/vim-airline' " nicer status line
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " for intellisense
-Plug 'nvim-lua/popup.nvim' " dependency for telescope The cmd 'Telescope' bare wasn't working before adding this
 Plug 'nvim-lua/plenary.nvim' " dependency for telescope & gitsigns
 Plug 'nvim-telescope/telescope.nvim' " for fuzzy finding telescope
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " make telescope faster using fzf scoring or sth

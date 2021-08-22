@@ -8,10 +8,9 @@ alias dt='cd ~/Desktop'
 alias dl='cd ~/Downloads'
 alias m='cd ~/music'
 alias dm='cd ~/Documents'
-alias dma='cd ~/Documents/articles'
+alias articles='cd ~/Documents/articles'
 alias dw='cd ~/drawings/'
-alias dwr='cd ~/drawings/references/'
-alias dwm='cd ~/drawings/my_drawings/'
+alias md='cd ~/drawings/my_drawings/'
 alias .f="cd ~/.dotfiles"
 alias s='cd ~/.dotfiles/scripts'
 # project 
