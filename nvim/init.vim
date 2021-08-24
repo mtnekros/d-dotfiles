@@ -23,11 +23,6 @@ set cc=81  " highlight column after 'textwidth'
 set splitright " open on right side when doing vsplit
 
 hi ColorColumn ctermbg=lightgrey guibg=lightgrey
-augroup numbertoggle " toggle relativenumber on/off between insert and other modes
-    autocmd!
-    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-    autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
-augroup END
 
 if (has("nvim"))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
