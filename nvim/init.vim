@@ -21,7 +21,6 @@ set noshowmode " hide mode sinces powerline plugin already shows it
 set guicursor=i:block " make cursor fat in insert mode like in vim
 set cc=81  " highlight column after 'textwidth'
 set splitright " open on right side when doing vsplit
-
 hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 if (has("nvim"))
