@@ -19,14 +19,15 @@ alias pp='cd ~/projects/personal/'
 alias pg='cd ~/projects/geonepal'
 alias pw='cd ~/projects/geonepal/waling'
 # blog
-alias b='cd ~/Documents/blogs/August/'
+alias b='cd ~/Documents/blogs/'
 alias startmpd='[ ! -s ~/.local/share/mpd/pid ] && mpd 2> /dev/null'
 
 # program alias
+alias vim="nvim"
 alias v="nvim"
 # youtube-dl
 alias yd="youtube-dl"
-alias yd7="youtube-dl -f 'bestvideo[height<=720]+bestaudio'"
+alias yd7="youtube-dl -f 'bestvideo[height<=720]+bestaudio' -o '%(title)s.%(ext)s'"
 alias yda="youtube-dl -f 'bestaudio' -o '%(title)s.mp3'"
 # stream from webcam
 alias mpvcam="mpv av://v4l2:/dev/video0 --ontop --profile=low-latency --window-scale=0.35 --no-border --untimed --no-osc"
@@ -41,19 +42,19 @@ alias music='ncmpcpp'
 alias weather='curl wttr.in'
 
 #common files
-alias vwl='nvim ~/Desktop/.worklog.md'
+alias vwl='vim ~/Desktop/.worklog.md'
 
 # custom scripts
 alias cu="corona_update"
 alias rs="record_screen"
 
 # config files
-alias cfb='nvim ~/.bashrc'
-alias cfba='nvim ~/.bash_aliases'
-alias cfnv='nvim ~/.config/nvim/init.vim'
-alias cfw='sudo nvim /etc/resolv.conf'
-alias cfs='nvim ~/.config/ranger/scope.sh'
-alias cfr='nvim ~/.config/ranger/rifle.conf'
+alias cfb='vim ~/.bashrc'
+alias cfba='vim ~/.bash_aliases'
+alias cfnv='vim ~/.config/vim/init.vim'
+alias cfw='sudo vim /etc/resolv.conf'
+alias cfs='vim ~/.config/ranger/scope.sh'
+alias cfr='vim ~/.config/ranger/rifle.conf'
 
 # systemctl shortcuts
 alias rsw='sudo systemctl restart NetworkManager'
