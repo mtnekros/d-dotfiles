@@ -51,7 +51,7 @@ alias rs="record_screen"
 # config files
 alias cfb='vim ~/.bashrc'
 alias cfba='vim ~/.bash_aliases'
-alias cfnv='vim ~/.config/vim/init.vim'
+alias cfnv='vim ~/.config/nvim/init.vim'
 alias cfw='sudo vim /etc/resolv.conf'
 alias cfs='vim ~/.config/ranger/scope.sh'
 alias cfr='vim ~/.config/ranger/rifle.conf'

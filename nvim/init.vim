@@ -2,11 +2,11 @@
 
 let mapleader=" " " map leader to Space
 syntax enable " enable syntax highlighting
-set smartcase " smart case when searching (respects capital search)
+set ignorecase smartcase " smart case when searching (respects capital search)
 set scrolloff=1 " keep 1 lines when scrolling
 set sidescrolloff=5 " keep 7 lines when scrolling sideways
 set nohlsearch " setting search texts to not be highlighted
-set tabstop=4 shiftwidth=4 expandtab
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set number relativenumber " show both number and relativenumber
 set numberwidth=1 " set numberwith/gutter to be as small as possible
 set signcolumn=yes:1 " keep 1 column with for extra signs in gutter (eg:gitkeeps sign or lint errors)
@@ -15,13 +15,17 @@ set cursorline " highlight cursorline
 set path+=** " Search file recursively with find
 set wildmenu
 set mouse=a " mouse usable on every mode
-autocmd FileType vue setlocal ts=3 sts=3 sw=3
-autocmd FileType sql setlocal ts=2 sts=2 sw=2
 set noshowmode " hide mode sinces powerline plugin already shows it
 set guicursor=i:block " make cursor fat in insert mode like in vim
 set cc=81  " highlight column after 'textwidth'
 set splitright " open on right side when doing vsplit
 hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+set nowrap " don't wrap the text
+
+augroup tabbing
+    autocmd!
+    autocmd FileType sql,vue,html,htmldjango setlocal ts=2 sts=2 sw=2
+augroup END
 
 if (has("nvim"))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -38,8 +42,7 @@ tnoremap <A-h> <C-\><C-n><C-w>h
 tnoremap <A-j> <C-\><C-n><C-w>j
 tnoremap <A-k> <C-\><C-n><C-w>k
 tnoremap <A-l> <C-\><C-n><C-w>l
-" insert mode
-inoremap <A-h> <C-\><C-n><C-w>h
+" insert mode inoremap <A-h> <C-\><C-n><C-w>h
 inoremap <A-j> <C-\><C-n><C-w>j
 inoremap <A-k> <C-\><C-n><C-w>k
 inoremap <A-l> <C-\><C-n><C-w>l
@@ -60,6 +63,9 @@ nnoremap <C-k> :m .-2<CR>==
 " Mapping for quickfix
 nnoremap <silent> <leader>n :cnext<CR>
 nnoremap <silent> <leader>p :cprev<CR>
+
+" FU mapping
+nnoremap <leader>fu ggVGr🍆
 
 """ Plugins
 call plug#begin('~/.config/nvim/plugged')
@@ -84,4 +90,3 @@ source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/onedark.vim
 source $HOME/.config/nvim/plug-config/airline.vim
 source $HOME/.config/nvim/plug-config/nerdtree.vim
-
