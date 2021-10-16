@@ -27,6 +27,11 @@ augroup tabbing
     autocmd FileType sql,vue,html,htmldjango setlocal ts=2 sts=2 sw=2
 augroup END
 
+augroup vuenolazyredraw
+    autocmd!
+    autocmd FileType vue setlocal nolazyredraw
+augroup END
+
 if (has("nvim"))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
