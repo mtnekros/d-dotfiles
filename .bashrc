@@ -162,3 +162,4 @@ fi
 # fuzzy finder key bindings
 [ -f /usr/share/fzf/key-bindings.bash ] && . /usr/share/fzf/key-bindings.bash
 
+export REACT_TERMINAL=xfce4-terminal

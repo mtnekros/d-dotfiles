@@ -27,6 +27,12 @@ augroup tabbing
     autocmd FileType sql,vue,html,htmldjango setlocal ts=2 sts=2 sw=2
 augroup END
 
+augroup trim_white_spaces
+    autocmd!
+    autocmd BufWritePre * %s/\s\+$//e
+	autocmd BufWritePre * %s/\n\+\%$//e
+augroup END
+
 if (has("nvim"))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
@@ -65,7 +71,7 @@ nnoremap <silent> <leader>n :cnext<CR>
 nnoremap <silent> <leader>p :cprev<CR>
 
 " FU mapping
-nnoremap <leader>fu ggVGr🍆
+nnoremap <leader>fu ggVGr💀
 
 """ Plugins
 call plug#begin('~/.config/nvim/plugged')
@@ -81,7 +87,7 @@ Plug 'nvim-lua/plenary.nvim' " dependency for telescope & gitsigns
 Plug 'nvim-telescope/telescope.nvim' " for fuzzy finding telescope
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " make telescope faster using fzf scoring or sth
 Plug 'lewis6991/gitsigns.nvim' " for basic git signs & functionalities
-Plug 'ryanoasis/vim-devicons'  " for icons in powerline & nerdtree: also have to install nerd font in your system for this to work 
+Plug 'ryanoasis/vim-devicons'  " for icons in powerline & nerdtree: also have to install nerd font in your system for this to work
 call plug#end()
 
 source $HOME/.config/nvim/plug-config/gitsigns.vim

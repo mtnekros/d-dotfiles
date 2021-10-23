@@ -9,15 +9,16 @@ alias dl='cd ~/Downloads'
 alias m='cd ~/music'
 alias dm='cd ~/Documents'
 alias articles='cd ~/Documents/articles'
+alias meme='cd ~/Videos/memes'
 alias dw='cd ~/drawings/'
 alias md='cd ~/drawings/my_drawings/'
 alias .f="cd ~/.dotfiles"
 alias s='cd ~/.dotfiles/scripts'
 # project 
 alias p='cd ~/projects'
-alias pp='cd ~/projects/personal/'
 alias pg='cd ~/projects/geonepal'
 alias pw='cd ~/projects/geonepal/waling'
+alias pd='cd ~/projects/geonepal/damak'
 # blog
 alias b='cd ~/Documents/blogs/'
 alias startmpd='[ ! -s ~/.local/share/mpd/pid ] && mpd 2> /dev/null'
