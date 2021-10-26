@@ -17,9 +17,7 @@ set wildmenu
 set mouse=a " mouse usable on every mode
 set noshowmode " hide mode sinces powerline plugin already shows it
 set guicursor=i:block " make cursor fat in insert mode like in vim
-set cc=81  " highlight column after 'textwidth'
 set splitright " open on right side when doing vsplit
-hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 set nowrap " don't wrap the text
 
 augroup tabbing
@@ -32,6 +30,11 @@ augroup END
 "     autocmd BufWritePre * %s/\s\+$//e
 " 	autocmd BufWritePre * %s/\n\+\%$//e
 " augroup END
+
+augroup vuenolazyredraw
+    autocmd!
+    autocmd FileType vue setlocal nolazyredraw
+augroup END
 
 if (has("nvim"))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -96,3 +99,8 @@ source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/onedark.vim
 source $HOME/.config/nvim/plug-config/airline.vim
 source $HOME/.config/nvim/plug-config/nerdtree.vim
+
+set cc=80  " highlight column after 'textwidth'
+hi ColorColumn ctermbg=Gray guibg=#3a3a3a
+" background colors
+hi Normal guibg=NONE ctermbg=NONE 
