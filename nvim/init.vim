@@ -27,11 +27,11 @@ augroup tabbing
     autocmd FileType sql,vue,html,htmldjango setlocal ts=2 sts=2 sw=2
 augroup END
 
-augroup trim_white_spaces
-    autocmd!
-    autocmd BufWritePre * %s/\s\+$//e
-	autocmd BufWritePre * %s/\n\+\%$//e
-augroup END
+" augroup trim_white_spaces
+"     autocmd!
+"     autocmd BufWritePre * %s/\s\+$//e
+" 	autocmd BufWritePre * %s/\n\+\%$//e
+" augroup END
 
 if (has("nvim"))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
