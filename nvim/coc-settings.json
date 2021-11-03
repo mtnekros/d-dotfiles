@@ -1,5 +1,6 @@
 {
-    "python.linting.enabled": true
+    "python.linting.enabled": true,
+    "suggest.minTriggerInputLength": 5
     /* "python.linting.pylintEnabled": true */
     /* "vetur.experimental.templateInterpolationService": true */
 }
