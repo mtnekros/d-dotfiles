@@ -56,6 +56,7 @@ alias cfnv='vim ~/.config/nvim/init.vim'
 alias cfw='sudo vim /etc/resolv.conf'
 alias cfs='vim ~/.config/ranger/scope.sh'
 alias cfr='vim ~/.config/ranger/rifle.conf'
+alias cfp='vim ~/.config/picom/picom.conf'
 
 # systemctl shortcuts
 alias rsw='sudo systemctl restart NetworkManager'
