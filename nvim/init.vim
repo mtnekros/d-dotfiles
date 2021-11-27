@@ -16,6 +16,8 @@ set path+=** " Search file recursively with find
 set wildignore+=**/node_modules/**
 set wildignore+=**/venv/**,**/*.pyc
 set wildmenu
+set wildignore+=**/node_modules/**,
+set wildignore+=**/venv/**,**/*.pyc,**/*.py~
 set mouse=a " mouse usable on every mode
 set noshowmode " hide mode sinces powerline plugin already shows it
 set guicursor=i:block " make cursor fat in insert mode like in vim
@@ -77,6 +79,10 @@ nnoremap <silent> <leader>p :cprev<CR>
 
 " FU mapping
 nnoremap <leader>fu ggVGr💀
+
+" Add spell checker
+nnoremap <leader>ss :setlocal spell! spelllang=en_us<CR>
+
 
 """ Plugins
 call plug#begin('~/.config/nvim/plugged')
