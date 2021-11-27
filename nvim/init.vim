@@ -2,7 +2,7 @@
 
 let mapleader=" " " map leader to Space
 syntax enable " enable syntax highlighting
-set ignorecase smartcase " smart case when searching (respects capital search)
+" set ignorecase smartcase " smart case when searching (respects capital search)
 set scrolloff=1 " keep 1 lines when scrolling
 set sidescrolloff=5 " keep 7 lines when scrolling sideways
 set nohlsearch " setting search texts to not be highlighted
@@ -13,6 +13,8 @@ set signcolumn=yes:1 " keep 1 column with for extra signs in gutter (eg:gitkeeps
 set clipboard=unnamedplus " yank/copy to clipboard
 set cursorline " highlight cursorline
 set path+=** " Search file recursively with find
+set wildignore+=**/node_modules/**
+set wildignore+=**/venv/**,**/*.pyc
 set wildmenu
 set mouse=a " mouse usable on every mode
 set noshowmode " hide mode sinces powerline plugin already shows it
@@ -80,6 +82,7 @@ nnoremap <leader>fu ggVGr💀
 call plug#begin('~/.config/nvim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " File Manager
 Plug 'joshdick/onedark.vim' " onedark theme
+Plug 'tpope/vim-fugitive' " git plugin that's so git it should be illegal
 Plug 'sheerun/vim-polyglot' " better syntax support
 Plug 'tpope/vim-surround' " yst<head> cs{'
 Plug 'tpope/vim-commentary' " for comment with gc + motion action
@@ -99,6 +102,7 @@ source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/onedark.vim
 source $HOME/.config/nvim/plug-config/airline.vim
 source $HOME/.config/nvim/plug-config/nerdtree.vim
+source $HOME/.config/nvim/plug-config/vim-fugitive.vim
 
 set cc=80  " highlight column after 'textwidth'
 hi ColorColumn ctermbg=Gray guibg=#3a3a3a

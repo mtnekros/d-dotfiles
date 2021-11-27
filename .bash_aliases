@@ -32,6 +32,7 @@ alias yd7="youtube-dl -f 'bestvideo[height<=720]+bestaudio' -o '%(title)s.%(ext)
 alias yda="youtube-dl -f 'bestaudio' -o '%(title)s.mp3'"
 # stream from webcam
 alias mpvcam="mpv av://v4l2:/dev/video0 --ontop --profile=low-latency --window-scale=0.35 --no-border --untimed --no-osc"
+alias mpvcam_regular="mpv av://v4l2:/dev/video0 --profile=low-latency --window-scale=0.35 --no-border --untimed --no-osc"
 
 # python alias
 alias vact=". ./venv/bin/activate"
