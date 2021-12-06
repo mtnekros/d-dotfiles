@@ -23,6 +23,7 @@ set noshowmode " hide mode sinces powerline plugin already shows it
 set guicursor=i:block " make cursor fat in insert mode like in vim
 set splitright " open on right side when doing vsplit
 set nowrap " don't wrap the text
+set incsearch " incremental search as I type
 
 augroup tabbing
     autocmd!
