@@ -109,6 +109,8 @@ Plug 'nvim-telescope/telescope.nvim' " for fuzzy finding telescope
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " make telescope faster using fzf scoring or sth
 Plug 'lewis6991/gitsigns.nvim' " for basic git signs & functionalities
 Plug 'ryanoasis/vim-devicons'  " for icons in powerline & nerdtree: also have to install nerd font in your system for this to work
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " for better syntax highlighting, indentation & folding
+
 call plug#end()
 
 source $HOME/.config/nvim/plug-config/gitsigns.vim
@@ -117,6 +119,7 @@ source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/onedark.vim
 source $HOME/.config/nvim/plug-config/airline.vim
 source $HOME/.config/nvim/plug-config/nerdtree.vim
+source $HOME/.config/nvim/plug-config/treesitter.vim
 source $HOME/.config/nvim/plug-config/vim-fugitive.vim
 
 set cc=80  " highlight column after 'textwidth'
