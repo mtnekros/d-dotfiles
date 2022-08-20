@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-BTRY=$(acpi | awk '{print $4 }' | sed 's/[^0-9]//g') # get battery percentage
+BTRY=$(acpi | tail -n 1 | awk '{print $4 }' | sed 's/[^0-9]//g') # get battery percentage
 RUNTIME_DIR=/run/user/$(id -u) # get runtime directory for current user
 
 function send_notification()

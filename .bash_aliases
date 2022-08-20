@@ -19,6 +19,7 @@ alias p='cd ~/projects'
 alias pg='cd ~/projects/geonepal'
 alias pw='cd ~/projects/geonepal/waling'
 alias pd='cd ~/projects/geonepal/damak'
+alias pa='cd ~/projects/apeirogon'
 # blog
 alias b='cd ~/Documents/blogs/'
 alias startmpd='[ ! -s ~/.local/share/mpd/pid ] && mpd 2> /dev/null'
@@ -61,3 +62,7 @@ alias cfp='vim ~/.config/picom/picom.conf'
 
 # systemctl shortcuts
 alias rsw='sudo systemctl restart NetworkManager'
+
+# localstack alias
+alias aws='aws --endpoint-url=http://localhost:4566'
+alias runlocalstack='docker run --rm -it -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack'

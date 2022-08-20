@@ -22,12 +22,20 @@ set mouse=a " mouse usable on every mode
 set noshowmode " hide mode sinces powerline plugin already shows it
 set guicursor=i:block " make cursor fat in insert mode like in vim
 set splitright " open on right side when doing vsplit
+set noswapfile " I hate swap files
 set nowrap " don't wrap the text
 set incsearch " incremental search as I type
 
 augroup tabbing
     autocmd!
     autocmd FileType sql,vue,html,htmldjango setlocal ts=2 sts=2 sw=2
+augroup END
+
+augroup folds
+    autocmd!
+    autocmd FileType * setlocal foldmethod=manual
+    autocmd FileType python setlocal foldmethod=indent
+    autocmd FileType python normal zR
 augroup END
 
 " augroup trim_white_spaces
