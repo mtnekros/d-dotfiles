@@ -163,3 +163,4 @@ fi
 [ -f /usr/share/fzf/key-bindings.bash ] && . /usr/share/fzf/key-bindings.bash
 
 export REACT_TERMINAL=xfce4-terminal
+export JAVA_HOME="/usr/lib/jvm/java-18-jdk/"

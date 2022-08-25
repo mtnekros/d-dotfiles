@@ -4,6 +4,20 @@ set encoding=utf-8
 
 let g:python3_host_prog = "/usr/bin/python"
 
+let g:coc_global_extensions = [
+  \ 'coc-java',
+  \ 'coc-java-debug',
+  \ 'coc-snippets',
+  \ 'coc-html',
+  \ 'coc-emmet',
+  \ 'coc-vetur',
+  \ 'coc-tsserver',
+  \ 'coc-sh',
+  \ 'coc-pyright',
+  \ 'coc-json',
+  \ 'coc-css'
+  \ ]
+"
 " TextEdit might fail if hidden is not set.
 set hidden
 

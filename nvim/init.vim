@@ -34,9 +34,7 @@ augroup END
 
 augroup folds
     autocmd!
-    autocmd FileType * setlocal foldmethod=manual
-    autocmd FileType python setlocal foldmethod=indent
-    autocmd FileType python normal zR
+    autocmd FileType * normal zR
 augroup END
 
 " augroup trim_white_spaces
@@ -111,7 +109,8 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " make telesco
 Plug 'lewis6991/gitsigns.nvim' " for basic git signs & functionalities
 Plug 'ryanoasis/vim-devicons'  " for icons in powerline & nerdtree: also have to install nerd font in your system for this to work
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " for better syntax highlighting, indentation & folding
-
+Plug 'honza/vim-snippets'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 call plug#end()
 
 source $HOME/.config/nvim/plug-config/gitsigns.vim
@@ -122,6 +121,7 @@ source $HOME/.config/nvim/plug-config/airline.vim
 source $HOME/.config/nvim/plug-config/nerdtree.vim
 source $HOME/.config/nvim/plug-config/treesitter.vim
 source $HOME/.config/nvim/plug-config/vim-fugitive.vim
+source $HOME/.config/nvim/plug-config/markdown-preview.vim
 
 set cc=80  " highlight column after 'textwidth'
 hi ColorColumn ctermbg=Gray guibg=#3a3a3a
