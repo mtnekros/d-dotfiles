@@ -25,6 +25,7 @@ set splitright " open on right side when doing vsplit
 set noswapfile " I hate swap files
 set nowrap " don't wrap the text
 set incsearch " incremental search as I type
+set laststatus=3 " set global status line for all window
 
 augroup tabbing
     autocmd!
