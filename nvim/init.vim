@@ -101,9 +101,9 @@ Plug 'joshdick/onedark.vim' " onedar theme
 Plug 'sheerun/vim-polyglot' " better syntax support
 Plug 'tpope/vim-surround' " yst<head> cs{'
 Plug 'tpope/vim-fugitive' " git plugin that's so git it should be illegal
+Plug 'lewis6991/gitsigns.nvim' " for basic git signs & functionalities
 Plug 'tpope/vim-commentary' " for comment with gc + motion action
 Plug 'vim-airline/vim-airline' " nicer status line
-Plug 'lewis6991/gitsigns.nvim' " for basic git signs & functionalities
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' } " Markdown preview
 
 " NERD Tree File Manager

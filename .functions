@@ -14,3 +14,15 @@ start_blog() {
 }
 
 export -f start_blog
+
+mvn_jersey() {
+    mvn archetype:generate \
+        -DgroupId=org.proj.$1 \
+        -DartifactId=$1 \
+        -DarchetypeArtifactId=jersey-quickstart-webapp \
+        -DarchetypeGroupId=org.glassfish.jersey.archetypes \
+        -DarchetypeVersion=3.0.6 \
+        -DinteractiveMode=false
+}
+
+export -f mvn_jersey

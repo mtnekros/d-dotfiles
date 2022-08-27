@@ -11,7 +11,6 @@ require'nvim-treesitter.configs'.setup {
     "vim",
     "python",
     "bash",
-    "markdown",
     "html",
     "javascript",
   },

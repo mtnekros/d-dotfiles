@@ -7,5 +7,3 @@ ffmpeg \
     -itsoffset 0.3s \
     -f alsa -i default \
     $outfile
-
-
