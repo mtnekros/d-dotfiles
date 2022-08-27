@@ -29,7 +29,7 @@ set laststatus=3 " set global status line for all window
 set hidden " don't have to save file before changing buffer
 set undofile " save undo history even after closing file
 set list
-set listchars=trail:,eol:,tab:-,lead:.
+set listchars=trail:,eol:,tab:-,lead:.,extends:,precedes:
 
 augroup tabbing
     autocmd!
@@ -56,12 +56,13 @@ if (has("termguicolors"))
 endif
 
 " window navigation mappings
-" probably terminal mode
+" terminal mode
 tnoremap <A-h> <C-\><C-n><C-w>h
 tnoremap <A-j> <C-\><C-n><C-w>j
 tnoremap <A-k> <C-\><C-n><C-w>k
 tnoremap <A-l> <C-\><C-n><C-w>l
-" insert mode inoremap <A-h> <C-\><C-n><C-w>h
+" insert mode
+inoremap <A-h> <C-\><C-n><C-w>h
 inoremap <A-j> <C-\><C-n><C-w>j
 inoremap <A-k> <C-\><C-n><C-w>k
 inoremap <A-l> <C-\><C-n><C-w>l
@@ -85,6 +86,9 @@ nnoremap <silent> <leader>p :cprev<CR>
 
 " FU mapping
 nnoremap <leader>fu ggVGr💀
+
+" Reload vimrc
+nnoremap <leader>v :source $MYVIMRC<CR>
 
 " Add spell checker
 nnoremap <leader>ss :setlocal spell! spelllang=en_us<CR>
