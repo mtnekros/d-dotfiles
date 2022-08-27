@@ -34,9 +34,9 @@ set listchars=trail:,eol:,tab:-,lead:.,extends:,precedes:
 augroup tabbing
     autocmd!
     autocmd FileType sql,vue,html,htmldjango setlocal ts=2 sts=2 sw=2
+augroup END
 
 augroup folds
-augroup END
     autocmd!
     autocmd FileType * normal zR
 augroup END
