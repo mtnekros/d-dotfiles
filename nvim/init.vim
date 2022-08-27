@@ -6,7 +6,7 @@ syntax enable " enable syntax highlighting
 set scrolloff=1 " keep 1 lines when scrolling
 set sidescrolloff=5 " keep 7 lines when scrolling sideways
 set nohlsearch " setting search texts to not be highlighted
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab shiftround
 set number relativenumber " show both number and relativenumber
 set numberwidth=1 " set numberwith/gutter to be as small as possible
 set signcolumn=yes:1 " keep 1 column with for extra signs in gutter (eg:gitkeeps sign or lint errors)
@@ -26,22 +26,20 @@ set noswapfile " I hate swap files
 set nowrap " don't wrap the text
 set incsearch " incremental search as I type
 set laststatus=3 " set global status line for all window
+set hidden " don't have to save file before changing buffer
+set undofile " save undo history even after closing file
+set list
+set listchars=trail:,eol:,tab:-,lead:.
 
 augroup tabbing
     autocmd!
     autocmd FileType sql,vue,html,htmldjango setlocal ts=2 sts=2 sw=2
-augroup END
 
 augroup folds
+augroup END
     autocmd!
     autocmd FileType * normal zR
 augroup END
-
-" augroup trim_white_spaces
-"     autocmd!
-"     autocmd BufWritePre * %s/\s\+$//e
-" 	autocmd BufWritePre * %s/\n\+\%$//e
-" augroup END
 
 augroup vuenolazyredraw
     autocmd!
@@ -94,34 +92,66 @@ nnoremap <leader>ss :setlocal spell! spelllang=en_us<CR>
 
 """ Plugins
 call plug#begin('~/.config/nvim/plugged')
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " File Manager
-Plug 'joshdick/onedark.vim' " onedark theme
-Plug 'tpope/vim-fugitive' " git plugin that's so git it should be illegal
+
+Plug 'joshdick/onedark.vim' " onedar theme
 Plug 'sheerun/vim-polyglot' " better syntax support
 Plug 'tpope/vim-surround' " yst<head> cs{'
+Plug 'tpope/vim-fugitive' " git plugin that's so git it should be illegal
 Plug 'tpope/vim-commentary' " for comment with gc + motion action
 Plug 'vim-airline/vim-airline' " nicer status line
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " for intellisense
+Plug 'lewis6991/gitsigns.nvim' " for basic git signs & functionalities
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' } " Markdown preview
+
+" NERD Tree File Manager
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " File Manager
+Plug 'ryanoasis/vim-devicons'  " for icons in powerline & nerdtree: also have to install nerd font in your system for this to work
+
+" Telescope
 Plug 'nvim-lua/popup.nvim' " dependency for telescope The cmd 'Telescope' bare wasn't working before adding this
 Plug 'nvim-lua/plenary.nvim' " dependency for telescope & gitsigns
 Plug 'nvim-telescope/telescope.nvim' " for fuzzy finding telescope
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " make telescope faster using fzf scoring or sth
-Plug 'lewis6991/gitsigns.nvim' " for basic git signs & functionalities
-Plug 'ryanoasis/vim-devicons'  " for icons in powerline & nerdtree: also have to install nerd font in your system for this to work
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " for better syntax highlighting, indentation & folding
+
+ " for better syntax highlighting, indentation & folding
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+" snippets stuffs
 Plug 'honza/vim-snippets'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+
+" LSP stuff (Language Diagnostics)
+" Plug 'neoclide/coc.nvim', {'branch': 'release'} " for intellisense
+Plug 'neovim/nvim-lspconfig' " Configuration for Nvim LSP
+Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' } " better looking GUI for lsp
+" Plug 'williamboman/nvim-lsp-installer' " for automatic installation of lsp
+
+" autocompletion
+Plug 'onsails/lspkind.nvim' " suggestion type icon for lsp
+Plug 'hrsh7th/nvim-cmp' " for autocompletion
+Plug 'hrsh7th/cmp-nvim-lsp' " for autocompletion
+Plug 'hrsh7th/cmp-nvim-lua' " for lua api autocompletion
+Plug 'hrsh7th/cmp-buffer' " for buffer autocompletion
+Plug 'hrsh7th/cmp-path' " for path autocompletion
+
+" For luasnip users.
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'rafamadriz/friendly-snippets' " vscode styel snippets
+Plug 'onsails/lspkind.nvim' " suggestion type icon for lsp
+
 call plug#end()
 
 source $HOME/.config/nvim/plug-config/gitsigns.vim
 source $HOME/.config/nvim/plug-config/telescope.vim
-source $HOME/.config/nvim/plug-config/coc.vim
+" source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/onedark.vim
 source $HOME/.config/nvim/plug-config/airline.vim
 source $HOME/.config/nvim/plug-config/nerdtree.vim
 source $HOME/.config/nvim/plug-config/treesitter.vim
 source $HOME/.config/nvim/plug-config/vim-fugitive.vim
 source $HOME/.config/nvim/plug-config/markdown-preview.vim
+source $HOME/.config/nvim/plug-config/lspconfig.vim
+source $HOME/.config/nvim/plug-config/nvim-cmp.vim
+source $HOME/.config/nvim/plug-config/lua-snip.vim
 
 set cc=80  " highlight column after 'textwidth'
 hi ColorColumn ctermbg=Gray guibg=#3a3a3a
