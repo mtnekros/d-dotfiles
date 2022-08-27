@@ -7,8 +7,9 @@ start_blog() {
         echo "No title provided";
         return;
     fi
-    filename="`date +'%d-%m-%Y'`_`echo "$@" | tr " " _ | tr [:upper:] [:lower:]`.md"
-    echo "# $@" >> $filename
+
+    filename="`echo "$@" | tr " " _  | tr [:upper:] [:lower:]`.md"
+    echo -e "Date: `date +%d-%m-%Y`\n# $@" >> $filename
     nvim "$filename"
 }
 
